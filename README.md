@@ -18,4 +18,12 @@ The steps this script goes through are as follows:
 - Create ```Buy Offers``` for ```Asset X``` using 1/4 of the ```Supply``` in ```Distributor Account```
 - Create ```Sell Offers``` for ```Asset X``` using 1/4 of the ```Supply``` in ```Distributor Account```
 
+Here's an example of an asset called ```TEST``` with a supply of ```1,000``` and an active market. 
+
+<div align="center"><img align="center" src="test-asset-details.PNG"></div>
+<br>
+<div align="center"><img align="center" src="test-asset-orderbook.PNG"></div>
+<br>
+
+## Nice, how do I use it? 
 

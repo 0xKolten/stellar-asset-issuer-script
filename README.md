@@ -1,4 +1,4 @@
-# Asset Issuer Script
+# Stellar Asset Issuer Script
 
 Python script that issues an asset on the Stellar testnet and creates a distributor account and a simple market. 
 

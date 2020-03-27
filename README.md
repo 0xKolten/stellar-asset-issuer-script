@@ -27,3 +27,16 @@ Here's an example of an asset called ```TEST``` with a supply of ```1,000``` and
 
 ## Nice, how do I use it? 
 
+Using the script is pretty simple by design but there are a couple of requirements. 
+- You must have Python installed. 
+- You must have argparse installed: ```pip install argparse```
+- The Stellar Python SDK (newest version) must be installed: ```pip install stellar-sdk```
+
+To actually run the script you compile it as you normally would but include 3 commandline arguments: <br>
+```python argparse.py TOKEN_CODE SUPPLY y```
+- ```TOKEN_CODE``` is an identifier for your asset (e.g. USD)
+- ```SUPPLY``` is the total supply of your asset (e.g. 100) 
+- ```y``` specifies that you want to create a market for the asset. Any other input prevents the market from being made. 
+
+Example: <br> 
+```python argparse.py TEST 1000 y```

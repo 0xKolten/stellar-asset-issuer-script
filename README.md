@@ -14,7 +14,7 @@ Really quick, here's some terms to know:
 
 **```Issuing Account```** - Account responsible for issuing the asset it is trusted for. Let's say Bank of Kolten wants to issue KoltenUSD (KCOIN). All users who want to hold KoltenUSD have to trust **my issuing account** for KUSD in order to receive it and verify that they are getting the real KUSD. 
 
-**```Dsitributor Account```** - Account responsible for distributing the asset. This is the second account owned by Bank of Kolten and is responsible for sending KUSD to users. This seperates the logic between issuing an asset and distributing an asset, along with providing transparency in to the ```Supply```. 
+**```Distributor Account```** - Account responsible for distributing the asset. This is the second account owned by Bank of Kolten and is responsible for sending KUSD to users. This seperates the logic between issuing an asset and distributing an asset, along with providing transparency in to the ```Supply```. 
 
 **```Supply```** - An ```Asset's``` total ```Supply``` is the amount of that ```Asset``` in circulation on Stellar. ```Issuing Accounts``` essentially hold an infinite ```Supply``` so it is not tracked until an ```Asset``` is sent from the ```Issuing Account``` to another account. That's why it's important to have a ```Distributor Account```!
 

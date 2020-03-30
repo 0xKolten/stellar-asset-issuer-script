@@ -29,7 +29,6 @@ Here's an example of an asset called ```TEST``` with a supply of ```1,000``` and
 
 Using the script is pretty simple by design but there are a couple of requirements. 
 - You must have Python installed. 
-- You must have argparse installed: ```pip install argparse```
 - The Stellar Python SDK (newest version) must be installed: ```pip install stellar-sdk```
 
 To actually run the script you compile it as you normally would but include 3 commandline arguments: <br>

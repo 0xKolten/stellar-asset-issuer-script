@@ -12,7 +12,7 @@ Really quick, here's some terms to know:
 
 **```Trustline```** - Establishment of trust between two accounts for an asset. Account A *trusts* an Issuing Account to issue an asset. After *trusting* an account for an asset (e.g. KUSD), the account can receive that asset. 
 
-**```Issuing Account```** - Account responsible for issuing the asset it is trusted for. Let's say Bank of Kolten wants to issue KoltenUSD (KCOIN). All users who want to hold KoltenUSD have to trust **my issuing account** for KUSD in order to receive it and verify that they are getting the real KUSD. 
+**```Issuing Account```** - Account responsible for issuing the asset it is trusted for. Let's say Bank of Kolten wants to issue KoltenUSD (KUSD). All users who want to hold KoltenUSD have to trust **my issuing account** for KUSD in order to receive it and verify that they are getting the real KUSD. 
 
 **```Distributor Account```** - Account responsible for distributing the asset. This is the second account owned by Bank of Kolten and is responsible for sending KUSD to users. This seperates the logic between issuing an asset and distributing an asset, along with providing transparency in to the ```Supply```. 
 

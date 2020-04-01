@@ -18,13 +18,13 @@ Really quick, here's some terms to know:
 
 **```Distributor Account```** - Account responsible for distributing the asset. This is the second account owned by Bank of Kolten and is responsible for sending KUSD to users. This seperates the logic between issuing an asset and distributing an asset, along with providing transparency in to the ```Supply```. 
 
-**```Supply```** - An ```Asset's``` total ```Supply``` is the amount of that ```Asset``` in circulation on Stellar. ```Issuing Accounts``` essentially hold an infinite ```Supply``` so it is not tracked until an ```Asset``` is sent from the ```Issuing Account``` to another account. That's why it's important to have a ```Distributor Account```!
+**```Supply```** - An ```Asset's``` total ```Supply``` is the amount of that ```Asset``` **in circulation** on Stellar. ```Issuing Accounts``` essentially hold an infinite ```Supply``` so it is not tracked until an ```Asset``` is sent from the ```Issuing Account``` to another account. That's why it's important to have a ```Distributor Account```!
 
-**```Asset```** - 
+**```Asset```** - An ```Asset``` is Stellar's respresentation of some form of value issued by a specific entity. An ```Asset``` is 'created' when one account establishes a ```Trustline``` with another *for* that ```Asset```. 
 
-**```Buy Offers```** - 
+**```Buy Offers```** - A ```Buy Offer``` is an offer to buy an asset for a set price. In this script, the buy offers are specifying that they would like to buy ```Asset``` for some amount of XLM.  
 
-**```Sell Offers```** - 
+**```Sell Offers```** - A ```Sell Offer``` is an offer to sell an asset for a set price. In this script, the sell offers are specifying that they would like to sell ```Asset``` for some amount of XLM. 
 
 ## What does it do? 
 
@@ -47,6 +47,7 @@ Here's an example of an asset called ```TEST``` with a supply of ```1,000``` and
 
 Using the script is pretty simple by design but there are a couple of requirements. 
 - You must have Python installed. 
+- Python Requests must be installed: ```pip install requests```
 - The Stellar Python SDK (newest version) must be installed: ```pip install stellar-sdk```
 
 To actually run the script you compile it as you normally would but include 3 commandline arguments: <br>

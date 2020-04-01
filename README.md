@@ -2,6 +2,8 @@
 
 Python script that issues an asset on the Stellar testnet and creates a distributor account and a simple market. 
 
+**Note:** Don't consider this script a 'perfect' iplementation as there might be better ways to implement it and there is no error checking. It is mostly for educational and kickstarting purposes. 
+
 ## Why is this useful? 
 
 One of the issues I've seen new Stellar developers run in to is creating new assets and markets. The reason it's tricky is due to the overhead that comes with some of the steps. What is an anchor? What is an issuing account and how is that different than a distrubtor account? What is a trustline? How the heck do I make a market? 

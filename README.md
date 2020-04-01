@@ -16,9 +16,9 @@ Really quick, here's some terms to know:
 
 **```Issuing Account```** - Account responsible for issuing the asset it is trusted for. Let's say Bank of Kolten wants to issue KoltenUSD (KUSD). All users who want to hold KoltenUSD have to trust **my issuing account** for KUSD in order to receive it and verify that they are getting the real KUSD. 
 
-**```Distributor Account```** - Account responsible for distributing the asset. This is the second account owned by Bank of Kolten and is responsible for sending KUSD to users. This seperates the logic between issuing an asset and distributing an asset, along with providing transparency in to the ```Supply```. 
+**```Distributor Account```** - Account responsible for distributing an asset. This is the second account owned by Bank of Kolten and is responsible for sending KUSD to users. This seperates the logic between issuing an asset and distributing an asset, along with providing transparency in to the ```Supply```. ```Distributor Accounts``` are not necessary but are recommended. 
 
-**```Supply```** - An ```Asset's``` total ```Supply``` is the amount of that ```Asset``` **in circulation** on Stellar. ```Issuing Accounts``` essentially hold an infinite ```Supply``` so it is not tracked until an ```Asset``` is sent from the ```Issuing Account``` to another account. That's why it's important to have a ```Distributor Account```!
+**```Supply```** - An ```Asset's``` total ```Supply``` is the amount of that ```Asset``` **in circulation** on Stellar. ```Issuing Accounts``` essentially hold an 'infinite' ```Supply``` so it is not tracked until an ```Asset``` is sent from the ```Issuing Account``` to another account. That's why it's important to have a ```Distributor Account```!
 
 **```Asset```** - An ```Asset``` is Stellar's respresentation of some form of value issued by a specific entity. An ```Asset``` is 'created' when one account establishes a ```Trustline``` with another *for* that ```Asset```. 
 
@@ -52,8 +52,8 @@ Using the script is pretty simple by design but there are a couple of requiremen
 
 To actually run the script you compile it as you normally would but include 3 commandline arguments: <br>
 ```python argparse.py TOKEN_CODE SUPPLY y```
-- ```TOKEN_CODE``` is an identifier for your asset (e.g. USD)
-- ```SUPPLY``` is the total supply of your asset (e.g. 100) 
+- ```TOKEN_CODE``` is an identifier for your asset (e.g. USD) - a four letter code is recommended.
+- ```SUPPLY``` is the total supply of your asset (e.g. 100). 
 - ```y``` specifies that you want to create a market for the asset. Any other input prevents the market from being made. 
 
 Example: <br> 

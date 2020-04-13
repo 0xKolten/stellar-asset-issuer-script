@@ -18,6 +18,10 @@ args = parser.parse_args()
 TESTNET = 'https://horizon-testnet.stellar.org'
 
 # Generate random keypairs and funding them with friendbot.
+# Side note: It is common to use a Create Account operation to 
+# handle the cretion of the distributor account (or any account on mainnet). 
+# I didn't find it necessary to use for this implementation in order to keep the code 
+# clean and simple. 
 def generate_keypair():
     friendbot = 'https://friendbot.stellar.org'
     keypair = Keypair.random()

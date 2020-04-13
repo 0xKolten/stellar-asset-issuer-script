@@ -60,3 +60,5 @@ To run the script compile it as you normally would, but include 3 command line a
 
 Example: <br> 
 ```python argparse.py TEST 1000 y```
+
+You will get feedback from the console giving you the ```Issuer Keypair``` and ```Distributor Keypair``` and what step the script is on. 

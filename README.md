@@ -59,6 +59,6 @@ To run the script compile it as you normally would, but include 3 command line a
 - ```y``` specifies that you want to create a market for the asset. Any other input prevents the market from being made. 
 
 Example: <br> 
-```python argparse.py TEST 1000 y```
+```python asset-isuer.py TEST 1000 y```
 
 You will get feedback from the console giving you the ```Issuer Keypair``` and ```Distributor Keypair``` and what step the script is on. 

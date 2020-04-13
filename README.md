@@ -53,8 +53,8 @@ Using the script is pretty simple by design but there are a couple of requiremen
 - The Stellar Python SDK (newest version) must be installed: ```pip install stellar-sdk```
 
 To run the script compile it as you normally would, but include 3 command line arguments: <br>
-```python argparse.py TOKEN_CODE SUPPLY y```
-- ```TOKEN_CODE``` is an identifier for your asset (e.g. USD) - a four letter code is required for this script.
+```python argparse.py TOKENCODE SUPPLY y```
+- ```TOKENCODE``` is an identifier for your asset (e.g. USD) - 12 character maximum.  
 - ```SUPPLY``` is the total supply of your asset (e.g. 100). 
 - ```y``` specifies that you want to create a market for the asset. Any other input prevents the market from being made. 
 

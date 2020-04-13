@@ -2,11 +2,11 @@
 
 Python script that issues an asset on the Stellar testnet and creates a distributor account and a simple market. 
 
-**Note:** Don't consider this script a 'perfect' iplementation as there might be better ways to implement it and there is no error checking. It is mostly for educational and kickstarting purposes. 
+**Note:** Don't consider this script a 'perfect' implementation as there might be better ways to implement anchors and markets for different use cases and there is no error checking. It is mostly for educational purposes. 
 
 ## Why is this useful? 
 
-One of the issues I've seen new Stellar developers run in to is creating new assets and markets. The reason it's tricky is due to the overhead that comes with some of the steps. What is an anchor? What is an issuing account and how is that different than a distrubtor account? What is a trustline? How the heck do I make a market? 
+One of the issues we've seen new Stellar developers run in to is creating new assets and markets. The reason it's tricky is due to the overhead that comes with some of the steps. What is an anchor? What is an issuing account and how is that different than a distrubtor account? What is a trustline? How the heck do I make a market? 
 
 This script aims to make all of that more clear through the code, comments, and this README. 
 
@@ -16,11 +16,13 @@ Really quick, here's some terms to know:
 
 **```Issuing Account```** - Account responsible for issuing the asset it is trusted for. Let's say Bank of Kolten wants to issue KoltenUSD (KUSD). All users who want to hold KoltenUSD have to trust **my issuing account** for KUSD in order to receive it and verify that they are getting the real KUSD. 
 
-**```Distributor Account```** - Account responsible for distributing an asset. This is the second account owned by Bank of Kolten and is responsible for sending KUSD to users. This seperates the logic between issuing an asset and distributing an asset, along with providing transparency in to the ```Supply```. ```Distributor Accounts``` are not necessary but are recommended. 
+**```Distributor Account```** - Account responsible for distributing an asset. This is the second account owned by Bank of Kolten and is responsible for sending KUSD to users. This seperates the logic between issuing an asset and distributing an asset, along with providing transparency in to the ```Supply```. ```Distributor Accounts``` are not necessary but are generally recommended. 
 
-**```Supply```** - An ```Asset's``` total ```Supply``` is the amount of that ```Asset``` **in circulation** on Stellar. ```Issuing Accounts``` essentially hold an 'infinite' ```Supply``` so it is not tracked until an ```Asset``` is sent from the ```Issuing Account``` to another account. That's why it's important to have a ```Distributor Account```!
+**```Supply```** - An ```Asset's``` total ```Supply``` is the amount of that ```Asset``` **in circulation** on Stellar. ```Issuing Accounts``` don't maintain a balance or ```Supply```, so this metric is not tracked until an ```Asset``` is sent from the ```Issuing Account``` to another. That's why it's important to have a ```Distributor Account```!
 
 **```Asset```** - An ```Asset``` is Stellar's respresentation of some form of value issued by a specific entity. An ```Asset``` is 'created' when one account establishes a ```Trustline``` with another *for* that ```Asset```. 
+
+**```Stellar DEX```** - The Stellar Decentralized Exchange is an open orderbook maintained on the Stellar ledger. Anyone can view and submit offers to the Stellar DEX and liquidity is shared across the network. 
 
 **```Buy Offers```** - A ```Buy Offer``` is an offer to buy an asset for a set price. In this script, the buy offers are specifying that they would like to buy ```Asset``` for some amount of XLM.  
 
@@ -50,9 +52,9 @@ Using the script is pretty simple by design but there are a couple of requiremen
 - Python Requests must be installed: ```pip install requests```
 - The Stellar Python SDK (newest version) must be installed: ```pip install stellar-sdk```
 
-To actually run the script you compile it as you normally would but include 3 commandline arguments: <br>
+To run the script compile it as you normally would, but include 3 command line arguments: <br>
 ```python argparse.py TOKEN_CODE SUPPLY y```
-- ```TOKEN_CODE``` is an identifier for your asset (e.g. USD) - a four letter code is recommended.
+- ```TOKEN_CODE``` is an identifier for your asset (e.g. USD) - a four letter code is required for this script.
 - ```SUPPLY``` is the total supply of your asset (e.g. 100). 
 - ```y``` specifies that you want to create a market for the asset. Any other input prevents the market from being made. 
 

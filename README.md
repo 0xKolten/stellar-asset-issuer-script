@@ -2,7 +2,7 @@
 
 Python script that issues an asset on the Stellar testnet and creates a distributor account and a simple market. 
 
-**Note:** Don't consider this script a 'perfect' implementation of anchors or markets. This script will only work on testnet. In order to create a mainnet version you will need lumens and you will need to fund accounts yourself. The ```generate_keypair()``` function would also need to be supplemented with a Create Account operation. This implementation is for educational purposes and there is no error checking. 
+**Note:** Don't consider this script a 'perfect' implementation of an anchor or markets. This script will only work on testnet. In order to create a mainnet version you will need lumens and you will need to fund accounts yourself. The ```generate_keypair()``` function would also need to be supplemented with a [Create Account](www.stellar.org/developers/guides/concepts/list-of-operations.html#create-account) operation. This implementation is for educational purposes and there is no error checking. 
 
 ## Why is this useful? 
 

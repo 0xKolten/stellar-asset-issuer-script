@@ -83,6 +83,16 @@ def send_asset(issuing_keypair, distributing_keypair, asset_code, supply):
     response = server.submit_transaction(transaction)
     print(json.dumps(response, indent=2))
 
+# Do some magic math to use a portion of the supply to make the market.
+# By allowing too big of a market the distributor can run out of lumens;
+# this function should solve such issues.
+def market_supply(supply):
+    if int(supply) > 1000000:
+        _supply = int(500000 * 0.15) / 6
+    else:
+        _supply = int((int(supply) * 0.15) / 6)
+    return str(_supply)
+
 # Make bids for the orderbook.
 def make_bids(asset_code, issuing_keypair, distributing_keypair, market_supply):
     # Talk to Horizon testnet instance.
@@ -158,15 +168,15 @@ def app(asset_code, supply, market):
     send_asset(issuer, distributor, asset_code, supply)
 
     if market == 'y':
-        # Take 15% of the asset supply, divide it by 6, and use that to create the order size.
-        market_supply = str(int((int(supply) * 0.15) / 6))
+        # Take a % of the total supply and use it to make a market
+        mkt_supply = market_supply(supply)
 
         # Create a basic market with half the supply
         print('\nMaking market bids...')
-        make_bids(asset_code, issuer, distributor, market_supply)
+        make_bids(asset_code, issuer, distributor, mkt_supply)
 
         print('\nMaking market asks...')
-        make_asks(asset_code, issuer, distributor, market_supply)
+        make_asks(asset_code, issuer, distributor, mkt_supply)
 
     else:
         print('\nNo market made.')

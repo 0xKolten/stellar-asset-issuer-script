@@ -18,10 +18,10 @@ args = parser.parse_args()
 TESTNET = 'https://horizon-testnet.stellar.org'
 
 # Generate random keypairs and funding them with friendbot.
-# Side note: It is common to use a Create Account operation to 
-# handle the cretion of the distributor account (or any account on mainnet). 
-# I didn't find it necessary to use for this implementation in order to keep the code 
-# clean and simple. 
+# Side note: It is common to use a Create Account operation to
+# handle the cretion of the distributor account (or any account on mainnet).
+# I didn't find it necessary to use for this implementation in order to keep the code
+# clean and simple.
 def generate_keypair():
     friendbot = 'https://friendbot.stellar.org'
     keypair = Keypair.random()
@@ -101,8 +101,7 @@ def make_bids(asset_code, issuing_keypair, distributing_keypair, market_supply):
         .append_manage_buy_offer_op('XLM', None, asset_code, issuing_keypair.public_key, market_supply, '.08')
         .append_manage_buy_offer_op('XLM', None, asset_code, issuing_keypair.public_key, market_supply, '.09')
         .append_manage_buy_offer_op('XLM', None, asset_code, issuing_keypair.public_key, market_supply, '.10')
-        .append_manage_buy_offer_op('XLM', None, asset_code, issuing_keypair.public_key, market_supply, '.11')
-        .append_manage_buy_offer_op('XLM', None, asset_code, issuing_keypair.public_key, market_supply, '.12')
+
         .build()
     )
 
@@ -131,8 +130,6 @@ def make_asks(asset_code, issuing_keypair, distributing_keypair, market_supply):
         .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.13')
         .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.14')
         .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.15')
-        .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.16')
-        .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.17')
 
         .build()
     )
@@ -147,6 +144,7 @@ def make_asks(asset_code, issuing_keypair, distributing_keypair, market_supply):
 
 # Encapsulate all that cool stuff up above.
 def app(asset_code, supply, market):
+
     print('\nIssuer Keypair')
     issuer = generate_keypair()
 
@@ -160,10 +158,10 @@ def app(asset_code, supply, market):
     send_asset(issuer, distributor, asset_code, supply)
 
     if market == 'y':
-        # Take half the asset supply, divide it by 10, and use that to create the order size.
-        market_supply = str((int(supply) / 2) / 10)
+        # Take 15% of the asset supply, divide it by 6, and use that to create the order size.
+        market_supply = str(int((int(supply) * 0.15) / 6))
 
-        # Create a basic market with half the supply 
+        # Create a basic market with half the supply
         print('\nMaking market bids...')
         make_bids(asset_code, issuer, distributor, market_supply)
 

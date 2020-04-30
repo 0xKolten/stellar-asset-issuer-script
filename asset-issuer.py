@@ -127,9 +127,9 @@ def make_asks(asset_code, issuing_keypair, distributing_keypair, market_supply):
             network_passphrase=Network.TESTNET_NETWORK_PASSPHRASE,
             base_fee=100,  # too lazy to fetch :)
         )
+        .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.11')
+        .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.12')
         .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.13')
-        .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.14')
-        .append_manage_sell_offer_op(asset_code, issuing_keypair.public_key, 'XLM', None, market_supply, '.15')
 
         .build()
     )
